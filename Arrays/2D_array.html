@@ -1,0 +1,27 @@
+<html>
+	<head></head>
+	<body>
+		<!--JavaScript Program 2D array-->
+		<script>
+			var gfg = new Array(2);  
+			document.write("Creating 2D array <br>");
+			for (var i = 0; i < gfg.length; i++) {
+			    gfg[i] = new Array(2);
+			}
+			let num = 0;
+			for(let i = 0; i < 2; i++ ){
+				for(let j = 0; j < 2; j++){
+					gfg[i][j] = num++;
+				}
+			}
+			
+			for(let i = 0; i < 2; i++ ){
+				for(let j = 0; j < 2; j++){
+					document.write(gfg[i][j]+" ");
+				}
+				document.write("<br>");
+			}
+			
+		</script>
+	</body>
+</html>
