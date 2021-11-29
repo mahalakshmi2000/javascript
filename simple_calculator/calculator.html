@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<style>
-			div{
+			#parent{
 				width:40%;
 				height:40%;
 				border:1px solid black;
@@ -63,23 +63,42 @@
 	</head>
 	<body>
 		<!--JavaScript calculator-->
-		<html>
 			<h1>Simple calculator using Js</h1>
-			<div>
+			<div id = "parent">
 				<form>
-					enter 1st value <input type = "text" id = "input1"><br>
-					enter 2st value <input type = "text" id = "input2" ><br>
-					result<input type = "text" id = "input3" ><br>
-					<input type = "button" id = "input4" onclick = "calculator()" value = "+">
-					<input type = "button" id = "input5" onclick = "calculator()" value = "-">
-					<input type = "button" id = "input6" onclick = "calculator()" value = "*">
-					<input type = "button" id = "input7" onclick = "calculator()" value = "/">
-					<input type = "button" id = "input8" onclick = "calculator()" value = "=">
+					enter 1st value <input type = "tel" id = "input1"><br>
+					enter 2st value <input type = "tel" id = "input2" ><br>
+					result<input type = "tel" id = "input3" value = ""><br>			
+					<input type = "button" id = "input4" value = "+" onclick = "calculator(this)">
+					<input type = "button" id = "input5" value = "-" onclick = "calculator(this)">
+					<input type = "button" id = "input6" value = "*" onclick = "calculator(this)">
+					<input type = "button" id = "input7" value = "/" onclick = "calculator(this)">
+						
+					
 				</form>
 			</div>
-		</html>
+	
 		<script>
-			function calculator(){
+			function calculator(num){
+				console.log(num.value);
+				
+				let num1 = parseFloat(document.getElementById("input1").value); 
+				let num2 = parseFloat(document.getElementById("input2").value); 
+				let sign = num.value; 
+				if(sign == "+"){
+					document.getElementById("input3").value = num1+num2;
+				}
+				if(sign == "-"){
+					document.getElementById("input3").value = num1-num2;
+				}
+				if(sign == "*"){
+					document.getElementById("input3").value = num1*num2;
+				}
+				if(sign == "/"){
+					document.getElementById("input3").value = num1/num2;
+				}
+				
+				
 				
 			}
 		</script>
